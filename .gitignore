@@ -1,2 +1,4 @@
+.env
 node_modules/
+agenciaviajes.dump
 .DS_Store

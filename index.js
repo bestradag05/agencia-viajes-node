@@ -1,7 +1,8 @@
 import express  from 'express';
 import router from './routes/index.js';
 import db from './config/db.js';
-
+import dotenv from 'dotenv/config'; // con dotenv, se importa con la configuracion para que acceda al 
+// .env y puedas aplciar tus variables de entorno
 
 const app = express();
 
@@ -31,6 +32,10 @@ app.use( (req, res, next) => {
     return next();
 })
 
+
+// Agregar Body parser para leer los datos del formulario
+
+app.use(express.urlencoded({extended: true}));
 
 
 // Definir la carpeta publica para obtener imagenes y estilos
